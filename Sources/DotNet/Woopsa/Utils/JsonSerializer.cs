@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
-#if NETCORE2 || NETSTANDARD2
+#if NETSTANDARD2_0
         
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -35,6 +36,11 @@ namespace Woopsa
         public static T Deserialize<T>(string json)
         {
             return JsonConvert.DeserializeObject<T>(json);
+        }
+
+        public static T Deserialize<T>(string json, JsonConverter converter)
+        {
+            return JsonConvert.DeserializeObject<T>(json, converter);
         }
     }
 }
