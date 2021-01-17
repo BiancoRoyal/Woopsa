@@ -100,7 +100,7 @@
 		<form id="urlForm">
 			<div class="form-line">
 				<label>Url:</label>
-				<input type="text" id="serverUrl" value="http://localhost/woopsa" /> 
+				<input type="text" id="serverUrl" value="http://localhost:8383/woopsa" />
 				<input type="submit" value="Connect + Subscribe"/>
 			</div>
 		</form>
@@ -126,6 +126,7 @@
 		<div class="form-line">
 			<label>Value: </label>
 			<span id="readValue" class="result"></span>
+			<span id="readError" class="result"></span>
 		</div>
 		<h2>Write a value:</h2>
 		<form id="writeForm">
@@ -137,6 +138,8 @@
 				<label>Value:</label>
 				<input disabled type="text" id="writeValue" value="42"/>
 				<input disabled type="submit" value="Write"/>
+				<span id="writeSuccess" class="result"></span>
+				<span id="writeError" class="result"></span>
 			</div>
 		</form>
 		<h2>Invoke a method:</h2>
@@ -151,12 +154,14 @@
 			</div>
 			<div class="form-line">
 				<label style="vertical-align:top">Arg 1 Value:</label>
-				<textarea id="invokeArgumentValue" value="Bill" >[
-  {"Id":0, "Verb":"read", "Path":"/Temperature"},
-  {"Id":1, "Verb":"write", "Path":"/Sensitivity", "Value":0.5},
-  {"Id":2, "Verb":"meta", "Path":"/"},
-  {"Id":3, "Verb":"invoke", "Path":"/GetWeatherAtDate", "Arguments":{"date":"2015-10-06T11:15:30.883Z"}}
-]</textarea>
+				<textarea id="invokeArgumentValue" value="Bill" >
+					[
+					  {"Id":0, "Verb":"read", "Path":"/Temperature"},
+					  {"Id":1, "Verb":"write", "Path":"/Sensitivity", "Value":0.5},
+					  {"Id":2, "Verb":"meta", "Path":"/"},
+					  {"Id":3, "Verb":"invoke", "Path":"/GetWeatherAtDate", "Arguments":{"date":"2015-10-06T11:15:30.883Z"}}
+					]
+				</textarea>
 			</div>
 			<div class="form-line">
 				<label></label>
@@ -166,6 +171,7 @@
 		<div class="form-line">
 			<label>Return value:</label>
 			<pre id="invokeValue" class="result" style="display:inline-block"></pre>
+			<span id="invokeError" class="result"></span>
 		</div>
 		<h2>Meta:</h2>
 		<form id="metaForm">
@@ -179,8 +185,9 @@
 			<label>Result:</label>
 			<pre id="metaValue" style="display: inline-block" class="result"></pre>
 		</div>
-		<script src="../lib/jquery-1.11.3.min.js"></script>
-		<script src="../woopsa-client.js"></script>
-		<script src="demo.js"></script>
 	</body>
+	<script src="lib/jquery-1.11.3.min.js"></script>
+	<script src="lib/axios.min.js"></script>
+	<script src="lib/woopsa-axios-client.js"></script>
+	<script src="lib/demo.js"></script>
 </html>

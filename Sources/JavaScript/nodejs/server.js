@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2021 
+ *   All rights reserved.
+ */
 var woopsaUtils = require('./woopsa-utils');
 var exceptions = require('./exceptions');
 var types = require('./types')

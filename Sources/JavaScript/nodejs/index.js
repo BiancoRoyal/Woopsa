@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2021 
+ *   All rights reserved.
+ */
 var server = require('./server');
 var types = require('./types');
 var exceptions = require('./exceptions');

@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2021 
+ *   All rights reserved.
+ */
 var woopsa = require('../index');
 
 // Create a test object Weather Station
