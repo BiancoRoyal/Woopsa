@@ -35,7 +35,16 @@
 
     global.woopsaClient.write = (path, value, callback, onError) => {
         if (global.axiosService) {
-            global.axiosService.post(global.axiosURL + 'write' + path, { value: value }, {})
+            global.axiosService.post(global.axiosURL + 'write' + path,  "value=" + value, {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Expose-Headers': '*',
+                    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+                },
+                withCredentials: false,
+                credentials: 'same-origin'
+            })
                 .then((response) => {
                     callback(path, response);
                 }).catch((err) => {

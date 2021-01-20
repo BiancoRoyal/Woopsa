@@ -37,7 +37,7 @@
 			$("#subscribePath").attr("disabled","disabled");
 			$("#urlForm input").each(function (){ $(this).attr("disabled","disabled")});
 		
-			/* global.axiosService.onError(function (type, errorThown){
+			/* this.onError(function (type, errorThown){
 				$(".log").prepend("<b>" + (new Date().toUTCString()) + ": </b>" + type + " - " + errorThown + "<br>");
 			}) */
 			
