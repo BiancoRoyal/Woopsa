@@ -25,7 +25,7 @@ namespace WoopsaDemoClient
                 Console.Write("Please enter the Woopsa server URL or leave blank for default (http://localhost/woopsa): ");
                 serverUrl = Console.ReadLine(); 
                 if (serverUrl == "")
-                    serverUrl = "http://localhost/woopsa";
+                    serverUrl = "http://0.0.0.0:8383/woopsa";
             
             }
 
